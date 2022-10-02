@@ -2,10 +2,9 @@ var readlineSync = require("readline-sync");
 
 var score = 0;
 
-// data of high score
 var highScores = [
   {
-    name: "Tanay",
+    name: "Nandini",
     score: 3,
   },
 
@@ -13,63 +12,62 @@ var highScores = [
     name: "Akash",
     score: 2,
   },
-]
+];
 
-// array of objects
-var questions = [{
-  question: "What's the full and original name of Captain America?",
-  answer: "Steve Rogers"
-}, {
-  question: "What's Thor's hammer called?",
-  answer: "Mjolnir"
-},
-{
-  question: "Do you know what's Spiderman's real name?",
-  answer: "Peter Parker"
-}];
+var questions = [
+  {
+    question: "What's the full and original name of Captain America?",
+    answer: "Steve Rogers",
+  },
+  {
+    question: "What's Thor's hammer called?",
+    answer: "Mjolnir",
+  },
+  {
+    question: "Do you know what's Spiderman's real name?",
+    answer: "Peter Parker",
+  },
+];
 
 function welcome() {
- var userName = readlineSync.question("What's your name? ");
+  var userName = readlineSync.question("What's your name? ");
 
-  console.log("Welcome "+ userName + "let's see if you know Marvel Cinematic Universe");
+  console.log(
+    "Welcome " + userName + "let's see if you know Marvel Cinematic Universe"
+  );
 }
 
-
-// play function
 function play(question, answer) {
   var userAnswer = readlineSync.question(question);
 
-  if (userAnswer.toUpperCase() === answer.toUpperCase()) { // branching
+  if (userAnswer.toUpperCase() === answer.toUpperCase()) {
     console.log("right!");
     score = score + 1;
-    
   } else {
     console.log("wrong!");
-   
   }
 
   console.log("current score: ", score);
-  console.log("-------------")
+  console.log("-------------");
 }
 
 function game() {
-  for (var i=0; i<questions.length; i++) {
+  for (var i = 0; i < questions.length; i++) {
     var currentQuestion = questions[i];
-    play(currentQuestion.question, currentQuestion.answer)
+    play(currentQuestion.question, currentQuestion.answer);
   }
 }
 
 function showScores() {
   console.log("YAY! You SCORED: ", score);
 
-  console.log("Check out the high scores, if you should be there ping me and I'll update it");
+  console.log(
+    "Check out the high scores, if you should be there ping me and I'll update it"
+  );
 
-  highScores.map(score => console.log(score.name, " : ", score.score))
+  highScores.map((score) => console.log(score.name, " : ", score.score));
 }
-
 
 welcome();
 game();
 showScores();
-
-

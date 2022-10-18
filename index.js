@@ -1,7 +1,5 @@
 var readlineSync = require("readline-sync");
-
 var score = 0;
-
 var highScores = [
   {
     name: "Nandini",
@@ -12,8 +10,11 @@ var highScores = [
     name: "Akash",
     score: 2,
   },
+  {
+    name: "Shipra",
+    score: 1,
+  },
 ];
-
 var questions = [
   {
     question: "What's the full and original name of Captain America?",
@@ -28,8 +29,7 @@ var questions = [
     answer: "Peter Parker",
   },
 ];
-
-function welcome() {
+function userInfo() {
   var userName = readlineSync.question("What's your name? ");
 
   console.log(
@@ -59,15 +59,13 @@ function game() {
 }
 
 function showScores() {
-  console.log("YAY! You SCORED: ", score);
+  console.log("Your Score: ", score);
 
-  console.log(
-    "Check out the high scores, if you should be there ping me and I'll update it"
-  );
+  console.log("Check out the high scores");
 
   highScores.map((score) => console.log(score.name, " : ", score.score));
 }
 
-welcome();
+userInfo();
 game();
 showScores();

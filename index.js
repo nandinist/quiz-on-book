@@ -2,39 +2,58 @@ var readlineSync = require("readline-sync");
 var score = 0;
 var highScores = [
   {
-    name: "Nandini",
-    score: 3,
+    name: "Lisa",
+    score: 7,
   },
 
   {
     name: "Akash",
-    score: 2,
+    score: 6,
   },
   {
     name: "Shipra",
     score: 1,
   },
 ];
+
 var questions = [
   {
-    question: "What's the full and original name of Captain America?",
-    answer: "Steve Rogers",
+    question: "Who is the author of the novel 'It ends with us'?",
+    answer: "Colleen Hoover",
   },
   {
-    question: "What's Thor's hammer called?",
-    answer: "Mjolnir",
+    question: "Which fiction book has character named 'Alex Volkov'?",
+    answer: "Twisted Love",
   },
   {
-    question: "Do you know what's Spiderman's real name?",
-    answer: "Peter Parker",
+    question:
+      "What is the name of the protagonist of the novel 'The book lovers' by author Emily henry?",
+    answer: "Nora Stephens",
+  },
+  {
+    question: "Who is the author of 'The Book of Answers'?",
+    answer: "Carol Bolt",
+  },
+  {
+    question:
+      "when did the novel 'Love Hypothesis' by author Ali Hazelwood come out?",
+    answer: "21 October 2021",
+  },
+  {
+    question: "How my novels are there in the 'Shatter me' series?",
+    answer: "11",
+  },
+  {
+    question:
+      "Who is the author of the poetry collection book 'Milk and Honey'?",
+    answer: "Rupi Kaur",
   },
 ];
+
 function userInfo() {
   var userName = readlineSync.question("What's your name? ");
 
-  console.log(
-    "Welcome " + userName + "let's see if you know Marvel Cinematic Universe"
-  );
+  console.log("Welcome " + userName + " let's see if you know about books");
 }
 
 function play(question, answer) {
@@ -59,7 +78,7 @@ function game() {
 }
 
 function showScores() {
-  console.log("Your Score: ", score);
+  console.log("Your score: ", score);
 
   console.log("Check out the high scores");
 
